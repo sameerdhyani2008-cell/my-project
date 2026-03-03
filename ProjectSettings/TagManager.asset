@@ -41,5 +41,32 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: 'back sky '
+    uniqueID: 2520131985
+    locked: 0
+  - name: 'back cloud '
+    uniqueID: 2873884273
+    locked: 0
+  - name: 'front cloud  '
+    uniqueID: 1212694095
+    locked: 0
+  - name: background1
+    uniqueID: 1321459391
+    locked: 0
+  - name: background2
+    uniqueID: 3528480371
+    locked: 0
+  - name: flag
+    uniqueID: 2081219083
+    locked: 0
+  - name: player
+    uniqueID: 2800422527
+    locked: 0
+  - name: grass
+    uniqueID: 3421709675
+    locked: 0
+  - name: Ground
+    uniqueID: 1630973717
+    locked: 0
   m_RenderingLayers:
   - Default
