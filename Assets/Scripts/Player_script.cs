@@ -4,11 +4,19 @@ using UnityEngine.InputSystem.XInput;
 public class Player_script : Main_script
 {
     float XInput ;
+    private bool tutorialTriggered = false;
     void Update()
     {
         XInput = Input.GetAxisRaw("Horizontal");
-        handel_input();
         Ground_collision();
+
+        if (isGrounded && !tutorialTriggered)
+        {
+            tutorialTriggered = true;
+            FindFirstObjectByType<TutorialManager>().PlayerLanded();
+        }
+
+        handel_input();
         handel_animations();
     }
 
