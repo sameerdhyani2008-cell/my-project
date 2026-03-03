@@ -59,6 +59,9 @@ TagManager:
   - name: flag
     uniqueID: 2081219083
     locked: 0
+  - name: furniture
+    uniqueID: 334820271
+    locked: 0
   - name: player
     uniqueID: 2800422527
     locked: 0
