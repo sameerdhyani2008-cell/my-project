@@ -7,34 +7,44 @@ public class TutorialManager : MonoBehaviour
     public TextMeshProUGUI tutorialText;
 
     private bool hasMoved = false;
+    private bool jumpTutorialActive = false;
 
     void Start()
     {
         tutorialPanel.SetActive(false);
     }
 
+    // Called when player lands from the intro fall
     public void PlayerLanded()
     {
         tutorialPanel.SetActive(true);
         tutorialText.text = "Press A & D to Move";
     }
 
+    // Called by the jump trigger
+    public void ShowJumpTutorial()
+    {
+        jumpTutorialActive = true;
+        tutorialPanel.SetActive(true);
+        tutorialText.text = "Press SPACE to Jump";
+    }
+
     void Update()
     {
-        if (tutorialPanel.activeSelf)
+        // Detect movement
+        if (!hasMoved && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
         {
-            // Detect movement input
-            if (!hasMoved && Mathf.Abs(Input.GetAxisRaw("Horizontal")) > 0)
-            {
-                hasMoved = true;
-                tutorialText.text = "Press SPACE to Jump";
-            }
+            hasMoved = true;
 
-            // Detect jump input
-            if (hasMoved && Input.GetKeyDown(KeyCode.Space))
-            {
-                tutorialPanel.SetActive(false);
-            }
+            // hide movement tutorial once player moves
+            tutorialPanel.SetActive(false);
+        }
+
+        // Detect jump input
+        if (jumpTutorialActive && Input.GetKeyDown(KeyCode.Space))
+        {
+            tutorialPanel.SetActive(false);
+            jumpTutorialActive = false;
         }
     }
 }
