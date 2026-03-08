@@ -28,7 +28,11 @@ public class TutorialManager : MonoBehaviour
         tutorialPanel.SetActive(true);
         tutorialText.text = "Press SPACE to Jump";
     }
-
+    public void ShowEnemyTutorial()
+    {
+        tutorialPanel.SetActive(true);
+        tutorialText.text = "Press E to defeat enemy";
+    }
     void Update()
     {
         // Detect movement

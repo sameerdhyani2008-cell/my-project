@@ -36,5 +36,6 @@ public class Player_script : Main_script
         anime.SetFloat("xVelocity", rb.linearVelocity.x);
         anime.SetFloat("yVelocity", rb.linearVelocity.y);
         anime.SetBool("isGrounded" , isGrounded);
+        anime.SetTrigger("attack");
     }
 }
